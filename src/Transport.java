@@ -1,17 +1,13 @@
-public class Transport {
-    private final String modelName;
-    private final int wheelsCount;
+public interface Transport {
+    void doService();
 
-    public Transport(String modelName, int wheelsCount) {
-        this.modelName = modelName;
-        this.wheelsCount = wheelsCount;
+    void updateTyre();
+
+    default void checkEngine() {
+        System.out.println("Нет возможности проверить двигатель");
     }
 
-    public String getModelName() {
-        return modelName;
-    }
-
-    public int getWheelsCount() {
-        return wheelsCount;
+    default void checkTrailer() {
+        System.out.println("Прицеп отсутствует");
     }
 }

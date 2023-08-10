@@ -1,14 +1,17 @@
-public class Car extends Transport implements TransportInterface {
+public class Car extends Bicycle implements Transport {
 
     public Car(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
     }
 
-    public void updateTyre() {
-        System.out.println("Меняем покрышку");
-    }
-
     public void checkEngine() {
         System.out.println("Проверяем двигатель");
+    }
+
+    @Override
+    public void doService() {
+        System.out.println(getModelName());
+        updateTyre();
+        checkEngine();
     }
 }

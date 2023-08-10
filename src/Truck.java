@@ -1,18 +1,18 @@
-public class Truck extends Transport implements TransportInterface {
+public class Truck extends Car implements Transport {
 
     public Truck(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
     }
 
-    public void updateTyre() {
-        System.out.println("Меняем покрышку");
-    }
-
-    public void checkEngine() {
-        System.out.println("Проверяем двигатель");
-    }
-
     public void checkTrailer() {
         System.out.println("Проверяем прицеп");
+    }
+
+    @Override
+    public void doService() {
+        System.out.println(getModelName());
+        updateTyre();
+        checkEngine();
+        checkTrailer();
     }
 }
